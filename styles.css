@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+li, a {
+    text-decoration: none;
+    list-style-type: none;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 24px;
+    max-width: 1920px;
+    height: 100px;
+}
+
+.container {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+/* 
+
+LANDING PAGE
+
+*/
+
+#landing-page {
+    background: transparent;
+    position: relative;
+}
+
+.nav__link--list {
+    display: flex;
+    
+}
+
+.nav__link {
+    margin: 0 12px;
+}
+
+#stats-logo {
+    width: 50px;
+    height: 50px;
+    margin: 12px;
+}
+
+.player__search {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player__search--title {
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-align: center;
+    letter-spacing: .1em;
+    font-size: 45px;
+    max-width: 1000px;
+    margin-bottom: 64px;
+    color: #fff;
+}
+
+.player__search--bar--wrapper {
+    display: flex;
+}
+
+.player__search--bar, #year-filter {
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    padding: 8px;
+    display: flex;
+    margin-bottom: 128px;
+    margin-right: 64px;
+}
+
+.player__search--bar--input { 
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding-left: 24px;
+}
+
+.player__search--bar--input::placeholder {
+    color: #fff;
+}
+
+.player__search--bar--input:focus-visible {
+    outline: none;
+}
+
+.player__search--bar--button {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+}
+
+.player__search--bar--button--img {
+    height: 30px;
+    width: 30px;
+    filter: invert(1);
+}
+
+.background-img--wrapper {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.background-img {
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+}
+
+/* 
+
+PLAYER STATS DISPLAY
+
+*/
+
+#player-display {
+    background-color: #242424;
+    padding: 40px 20px;
+}
+
+.player-display__header {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-display__search {
+    font-size: 28px;
+    color: #fff;
+}
+
+#filter {
+    background-color: #6030b1;
+    border: none;
+    border-radius: 9999px;
+    color: #fff;
+}
+
+#filter:focus-visible {
+    outline: none;
+}
+
+.player-display__label-stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+
+.player-display__actual-stats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.player-display__stats--wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-display__stats {
+    display: flex;
+    flex-direction: column;
+    padding: 64px 0;
+}
+
+.player-display__stats--pic, .player-display__labels--pic, .player-display__stats--name, .player-display__labels--name {
+    width: 20%;
+    height: auto;
+}
+
+.player-display__labels--ppg, .player-display__stats--ppg, .player-display__stats--apg, .player-display__stats--rpg, .player-display__stats--bpg, .player-display__stats--spg, .player-display__labels--apg, .player-display__labels--rpg, .player-display__labels--bpg, .player-display__labels--spg{
+    width: 12%;
+    height: auto;
+    overflow-wrap: break-word;
+}
+
+.player__stat {
+    overflow-wrap: break-word;
+}
+
+.player__img {
+    max-width: 125px;
+    width: 100%;
+    height: auto;
+}
+
+.player__stat, .player-display__label {
+    color: #fff;
+}
+
+
+
