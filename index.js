@@ -90,10 +90,11 @@ async function renderTeams(year, filter, selectedTeam) {
                 console.log(team);
                 teamChoice = team;
                 console.log(teamChoice);
+                teamEl.innerHTML = teamHTML(teamChoice);
             }
         })
         // console.log(teamChoice);
-        teamEl.innerHTML = teamHTML(teamChoice);
+        
     }
 
 }
@@ -113,25 +114,25 @@ function teamHTML(team) {
                         <img src="https://cdn.nba.com/logos/nba/${team.teamId}/primary/L/logo.svg" class="player__img player__stat" alt="">
                     </figure>
                     <div class="player-display__stats--name ">
-                        <h3 class="player__stat">${name}</h3>
+                        <h3 class="player__stat player-display__text">${name}</h3>
                     </div>
                     <div class="player-display__stats--ppg ">
-                        <h3 class="player__stat">${team.ppg.avg + ' #' + team.ppg.rank}</h3>
+                        <h3 class="player__stat player-display__text">${team.ppg.avg + ' #' + team.ppg.rank}</h3>
                     </div>
                     <div class="player-display__stats--apg">
-                        <h3 class="player__stat">${team.apg.avg+ ' #' + team.apg.rank}</h3>
+                        <h3 class="player__stat player-display__text">${team.apg.avg+ ' #' + team.apg.rank}</h3>
                     </div>
                     <div class="player-display__stats--drpg">
-                        <h3 class="player__stat">${parseFloat(team.drpg.avg) + ' #' + team.drpg.rank}</h3>
+                        <h3 class="player__stat player-display__text">${parseFloat(team.drpg.avg) + ' #' + team.drpg.rank}</h3>
                     </div>
                     <div class="player-display__stats--orpg">
-                        <h3 class="player__stat">${parseFloat(team.orpg.avg) + ' #' + team.orpg.rank}</h3>
+                        <h3 class="player__stat player-display__text">${parseFloat(team.orpg.avg) + ' #' + team.orpg.rank}</h3>
                     </div>
                     <div class="player-display__stats--bpg">
-                        <h3 class="player__stat">${team.bpg.avg+ ' #' + team.bpg.rank}</h3>
+                        <h3 class="player__stat player-display__text">${team.bpg.avg+ ' #' + team.bpg.rank}</h3>
                     </div>
                     <div class="player-display__stats--spg">
-                        <h3 class="player__stat">${team.spg.avg + ' #' + team.spg.rank}</h3>
+                        <h3 class="player__stat player-display__text">${team.spg.avg + ' #' + team.spg.rank}</h3>
                     </div>
                 </div>
 `
@@ -154,5 +155,5 @@ function saveTeam() {
 }
 
 function Alert() {
-    alert("This feature doesn't work yet");
+    alert("This feature doesn't work")
 }

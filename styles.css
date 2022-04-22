@@ -91,9 +91,11 @@ LANDING PAGE
 
 .player__search--bar--wrapper {
     display: flex;
+    width: 100%;
 }
 
 .player__search--bar, #year-filter {
+    width: 100%;
     border: 2px solid #fff;
     border-radius: 9999px;
     padding: 8px;
@@ -102,16 +104,23 @@ LANDING PAGE
     margin-right: 64px;
 }
 
+#year-filter {
+    width: 125px;
+}
+
 .player__search--bar--input { 
+    width: 90%;
     background: transparent;
     border: none;
     color: #fff;
     font-size: 24px;
     padding-left: 24px;
+    text-align: center;
 }
 
 .player__search--bar--input::placeholder {
     color: #fff;
+    opacity: 0.7;
 }
 
 .player__search--bar--input:focus-visible {
@@ -119,13 +128,14 @@ LANDING PAGE
 }
 
 .player__search--bar--button {
-    height: 50px;
-    width: 50px;
+    width: 10%;
+    height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     background: transparent;
     border: none;
+    padding-right: 8px;
 }
 
 .player__search--bar--button--img {
@@ -238,6 +248,83 @@ PLAYER STATS DISPLAY
 .player__stat, .player-display__label {
     color: #fff;
 }
+
+
+
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+    .player-display__text {
+        font-size: 12px;
+    }
+
+    .player-display__search {
+        font-size: 20px;
+    }
+
+    .player__search--title {
+        font-size: 24px;
+    }
+
+    .player__search--bar--input {
+        font-size: 14px;
+        padding-left: 0;
+    }
+
+    .player__search--bar--button--img {
+        height: 15px;
+        width: 15px;
+    }
+  }
+  
+  
+  /* SMALL PHONES, LARGE SMARTPHONES */
+  @media (max-width: 550px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .nav__link--list {
+        flex-direction: column;
+    }
+
+    .player__search {
+        margin-top: 128px;
+    }
+
+    #filter {
+        width: 50px;
+    }
+
+    #year-filter {
+        width: 25%;
+        margin-right: 16px;
+    }
+
+    .player__search--bar {
+        width: 75%;
+        margin-right: 16px;
+    }
+
+    .player__search--bar--input {
+        font-size: 8px;
+        padding-left: 0;
+    }
+
+    .player-display__text {
+        font-size: 6px;
+    }
+
+    .player-display__search {
+        font-size: 14px;
+    }
+
+    .player__search--title {
+        font-size: 16px;
+    }
+    
+   
+  }
 
 
 
