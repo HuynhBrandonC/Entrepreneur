@@ -146,7 +146,7 @@ LANDING PAGE
 .background-img {
     object-fit: cover;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
 }
 
 /* 
@@ -214,14 +214,19 @@ PLAYER STATS DISPLAY
     height: auto;
 }
 
-.player-display__labels--ppg, .player-display__stats--ppg, .player-display__stats--apg, .player-display__stats--rpg, .player-display__stats--bpg, .player-display__stats--spg, .player-display__labels--apg, .player-display__labels--rpg, .player-display__labels--bpg, .player-display__labels--spg{
-    width: 12%;
+.player-display__labels--ppg, .player-display__stats--ppg, .player-display__stats--apg, .player-display__stats--drpg, .player-display__stats--bpg, .player-display__stats--spg, .player-display__labels--apg, .player-display__labels--drpg, .player-display__labels--bpg, .player-display__labels--spg, .player-display__labels--orpg, .player-display__stats--orpg{
+    width: 10%;
     height: auto;
     overflow-wrap: break-word;
 }
 
 .player__stat {
     overflow-wrap: break-word;
+    padding: 0 8px;
+}
+
+.player-display__label {
+    padding: 0 8px;
 }
 
 .player__img {

@@ -1,6 +1,9 @@
 const teamEl = document.querySelector('.player-display__actual-stats');
 let year;
 let filter;
+let selectedTeam;
+let teamChoice;
+const teamInputEl = document.getElementById('teamInput');
 
 let valid_ids = [
     ['1610612737', 'Atlanta Hawks'],
@@ -39,7 +42,7 @@ let valid_ids = [
 
 
 
-async function renderTeams(year, filter) {
+async function renderTeams(year, filter, selectedTeam) {
     const teams = await fetch(`https://data.nba.net/data/10s/prod/v1/${year}/team_stats_rankings.json`);
     const teamsData = await teams.json();
     const teamsDataRSUnFiltered = (teamsData.league.standard.regularSeason.teams);
@@ -53,8 +56,45 @@ async function renderTeams(year, filter) {
         })
     })
 
+    if (filter === "PPG_HIGH_TO_LOW") {
+        teamsDataRS.sort((a,b) => parseInt(a.ppg.rank) - parseInt(b.ppg.rank))
+    } else if (filter === "PPG_LOW_TO_HIGH") {
+        teamsDataRS.sort((a,b) => parseInt(b.ppg.rank) - parseInt(a.ppg.rank))
+    }  else if (filter === "APG_HIGH_TO_LOW") {
+        teamsDataRS.sort((a,b) => parseInt(a.apg.rank) - parseInt(b.apg.rank))
+    } else if (filter === "APG_LOW_TO_HIGH") {
+        teamsDataRS.sort((a,b) => parseInt(b.apg.rank) - parseInt(a.apg.rank))
+    }  else if (filter === "DRPG_HIGH_TO_LOW") {
+        teamsDataRS.sort((a,b) => parseInt(a.drpg.rank) - parseInt(b.drpg.rank))
+    } else if (filter === "DRPG_LOW_TO_HIGH") {
+        teamsDataRS.sort((a,b) => parseInt(b.drpg.rank) - parseInt(a.drpg.rank))
+    }  else if (filter === "ORPG_HIGH_TO_LOW") {
+        teamsDataRS.sort((a,b) => parseInt(a.orpg.rank) - parseInt(b.orpg.rank))
+    } else if (filter === "ORPG_LOW_TO_HIGH") {
+        teamsDataRS.sort((a,b) => parseInt(b.orpg.rank) - parseInt(a.orpg.rank))
+    }  else if (filter === "BPG_HIGH_TO_LOW") {
+        teamsDataRS.sort((a,b) => parseInt(a.bpg.rank) - parseInt(b.bpg.rank))
+    } else if (filter === "BPG_LOW_TO_HIGH") {
+        teamsDataRS.sort((a,b) => parseInt(b.bpg.rank) - parseInt(a.bpg.rank))
+    }  else if (filter === "SPG_HIGH_TO_LOW") {
+        teamsDataRS.sort((a,b) => parseInt(a.spg.rank) - parseInt(b.spg.rank))
+    } else if (filter === "SPG_LOW_TO_HIGH") {
+        teamsDataRS.sort((a,b) => parseInt(b.spg.rank) - parseInt(a.spg.rank))
+    }
 
+    if (!selectedTeam) {
     teamEl.innerHTML = teamsDataRS.map(team => teamHTML(team)).join('');
+    } else {
+        teamsDataRS.forEach(team => {
+            if ((team.name + ' ' + team.nickname) === selectedTeam) {
+                console.log(team);
+                teamChoice = team;
+                console.log(teamChoice);
+            }
+        })
+        // console.log(teamChoice);
+        teamEl.innerHTML = teamHTML(teamChoice);
+    }
 
 }
 
@@ -63,13 +103,11 @@ function teamHTML(team) {
 
     valid_ids.forEach(id => {
         if (parseInt(id[0]) === parseInt(team.teamId)) {
-            console.log(id[0]);
-            console.log(team.teamId);
-            name = valid_ids[1]
+            name = id[1];
         }
     })
 
-return `
+    return `
                 <div class="player-display__stats--wrapper">
                     <figure class="player-display__stats--pic player__stat">
                         <img src="https://cdn.nba.com/logos/nba/${team.teamId}/primary/L/logo.svg" class="player__img player__stat" alt="">
@@ -78,19 +116,22 @@ return `
                         <h3 class="player__stat">${name}</h3>
                     </div>
                     <div class="player-display__stats--ppg ">
-                        <h3 class="player__stat">${team.ppg.avg}</h3>
+                        <h3 class="player__stat">${team.ppg.avg + ' #' + team.ppg.rank}</h3>
                     </div>
                     <div class="player-display__stats--apg">
-                        <h3 class="player__stat">${team.apg.avg}</h3>
+                        <h3 class="player__stat">${team.apg.avg+ ' #' + team.apg.rank}</h3>
                     </div>
-                    <div class="player-display__stats--rpg">
-                        <h3 class="player__stat">${(parseFloat(team.drpg.avg) + parseFloat(team.orpg.avg)).toFixed(1)}</h3>
+                    <div class="player-display__stats--drpg">
+                        <h3 class="player__stat">${parseFloat(team.drpg.avg) + ' #' + team.drpg.rank}</h3>
+                    </div>
+                    <div class="player-display__stats--orpg">
+                        <h3 class="player__stat">${parseFloat(team.orpg.avg) + ' #' + team.orpg.rank}</h3>
                     </div>
                     <div class="player-display__stats--bpg">
-                        <h3 class="player__stat">${team.bpg.avg}</h3>
+                        <h3 class="player__stat">${team.bpg.avg+ ' #' + team.bpg.rank}</h3>
                     </div>
                     <div class="player-display__stats--spg">
-                        <h3 class="player__stat">${team.spg.avg}</h3>
+                        <h3 class="player__stat">${team.spg.avg + ' #' + team.spg.rank}</h3>
                     </div>
                 </div>
 `
@@ -98,10 +139,20 @@ return `
 
 function filterTeams(event) {
     filter = event.target.value;
-    renderTeams(year, filter);
+    renderTeams(year, filter, selectedTeam);
 }
 
 function filterYear(event) {
     year = event.target.value;
-    renderTeams(year, filter);
+    renderTeams(year, filter, selectedTeam);
+}
+
+function saveTeam() {
+    selectedTeam = teamInputEl.value;
+    console.log(selectedTeam);
+    renderTeams(year, filter, selectedTeam);
+}
+
+function Alert() {
+    alert("This feature doesn't work yet");
 }

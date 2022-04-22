@@ -15,17 +15,17 @@
             </figure>
             <ul class="nav__link--list">
                 <li class="nav__link">
-                    <a href="#">
+                    <a href="#" onclick="Alert()">
                         Home
                     </a>
                 </li>
                 <li class="nav__link">
-                    <a href="#">
+                    <a href="index.html">
                         Find A team
                     </a>
                 </li>
                 <li class="nav__link">
-                    <a href="#">
+                    <a href="#" onclick="Alert()">
                         Contact
                     </a>
                 </li>
@@ -35,8 +35,8 @@
             <h1 class="player__search--title">FIND A TEAM</h1>
                 <div class="player__search--bar--wrapper">
                     <div class="player__search--bar">
-                        <input type="text" class="player__search--bar--input" placeholder="Enter a team">
-                        <button class="player__search--bar--button">
+                        <input type="text" id="teamInput" class="player__search--bar--input" placeholder="Enter a team">
+                        <button class="player__search--bar--button" onclick="saveTeam()">
                             <img class="player__search--bar--button--img" src="./assets/magnifying-glass-solid.svg" alt="">
                         </button>
                     </div>
@@ -49,9 +49,6 @@
                         <option value="2017"> 2017</option>
                         <option value="2016"> 2016</option>
                         <option value="2015"> 2015</option>
-                        <option value="2014"> 2014</option>
-                        <option value="2013"> 2013</option>
-                        <option value="2012"> 2012</option>
                     </select>
                 </div>
         </div>
@@ -66,6 +63,16 @@
                 <option value="" disabled selected>Sort</option>
                 <option value="PPG_HIGH_TO_LOW"> PPG high -> low</option>
                 <option value="PPG_LOW_TO_HIGH"> PPG low -> high</option>
+                <option value="APG_HIGH_TO_LOW"> APG high -> low</option>
+                <option value="APG_LOW_TO_HIGH"> APG low -> high</option>
+                <option value="DRPG_HIGH_TO_LOW"> DRPG high -> low</option>
+                <option value="DRPG_LOW_TO_HIGH"> DRPG low -> high</option>
+                <option value="ORPG_HIGH_TO_LOW"> ORPG high -> low</option>
+                <option value="ORPG_LOW_TO_HIGH"> ORPG low -> high</option>
+                <option value="BPG_HIGH_TO_LOW"> BPG high -> low</option>
+                <option value="BPG_LOW_TO_HIGH"> BPG low -> high</option>
+                <option value="SPG_HIGH_TO_LOW"> SPG high -> low</option>
+                <option value="SPG_LOW_TO_HIGH"> SPG low -> high</option>
             </select>
         </div>
         <div class="player-display__stats">
@@ -82,8 +89,11 @@
                <div class="player-display__labels--apg">
                    <h3 class="player-display__label">APG</h3>
                </div>
-               <div class="player-display__labels--rpg">
-                   <h3 class="player-display__label">RPG</h3>
+               <div class="player-display__labels--drpg">
+                   <h3 class="player-display__label">DRPG</h3>
+               </div>
+               <div class="player-display__labels--orpg">
+                   <h3 class="player-display__label">ORPG</h3>
                </div>
                <div class="player-display__labels--bpg">
                    <h3 class="player-display__label">BPG</h3>
