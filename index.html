@@ -4,109 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>NBA STATS</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
 </head>
 <body>
-    <section id="landing-page">
-        <nav>
-            <figure>
-                <img id="stats-logo" src="./assets/stats-icon-152x152.png" alt="">
-            </figure>
-            <ul class="nav__link--list">
-                <li class="nav__link">
-                    <a href="#" onclick="Alert()">
-                        Home
-                    </a>
-                </li>
-                <li class="nav__link">
-                    <a href="index.html">
-                        Find A team
-                    </a>
-                </li>
-                <li class="nav__link">
-                    <a href="#" onclick="Alert()">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="player__search">
-            <h1 class="player__search--title">FIND A TEAM</h1>
-                <div class="player__search--bar--wrapper">
-                    <div class="player__search--bar">
-                        <input type="text" id="teamInput" class="player__search--bar--input" placeholder="Enter a team (i.e Atlanta Hawks)">
-                        <button class="player__search--bar--button" onclick="saveTeam()">
-                            <img class="player__search--bar--button--img" src="./assets/magnifying-glass-solid.svg" alt="">
-                        </button>
-                    </div>
-                    <select id="year-filter" onchange="filterYear(event)">
-                        <option value=""  disabled selected>Sort</option>
-                        <option value="2021"> 2021</option>
-                        <option value="2020"> 2020</option>
-                        <option value="2019"> 2019</option>
-                        <option value="2018"> 2018</option>
-                        <option value="2017"> 2017</option>
-                        <option value="2016"> 2016</option>
-                        <option value="2015"> 2015</option>
-                    </select>
-                </div>
+    <header class="header">
+        ENTREPRENEURSHIP
+    </header>
+    <div class="Recipe__Search">
+        <div class="Recipe__Searcher">
+            <input type="text" class="Recipe__Search--input">
         </div>
-        <figure class="background-img--wrapper">
-            <img src="./assets/nba-plain--f3cbae67-8723-4002-819b-15d154a5538c.png" class="background-img">
-        </figure>
-    </section>
-    <section id="player-display">
-        <div class="player-display__header">
-            <h1 class="player-display__search">Search Results:</h1>
-            <select id="filter" onchange="filterTeams(event)">
-                <option value="" disabled selected>Sort</option>
-                <option value="PPG_HIGH_TO_LOW"> PPG high -> low</option>
-                <option value="PPG_LOW_TO_HIGH"> PPG low -> high</option>
-                <option value="APG_HIGH_TO_LOW"> APG high -> low</option>
-                <option value="APG_LOW_TO_HIGH"> APG low -> high</option>
-                <option value="DRPG_HIGH_TO_LOW"> DRPG high -> low</option>
-                <option value="DRPG_LOW_TO_HIGH"> DRPG low -> high</option>
-                <option value="ORPG_HIGH_TO_LOW"> ORPG high -> low</option>
-                <option value="ORPG_LOW_TO_HIGH"> ORPG low -> high</option>
-                <option value="BPG_HIGH_TO_LOW"> BPG high -> low</option>
-                <option value="BPG_LOW_TO_HIGH"> BPG low -> high</option>
-                <option value="SPG_HIGH_TO_LOW"> SPG high -> low</option>
-                <option value="SPG_LOW_TO_HIGH"> SPG low -> high</option>
-            </select>
-        </div>
-        <div class="player-display__stats">
-            <div class="player-display__label-stats">
-               <div class="player-display__labels--pic">
-                   <h3 class="player-display__label player-display__text">Picture</h3>
-               </div>
-               <div class="player-display__labels--name">
-                   <h3 class="player-display__label player-display__text">Name</h3>
-               </div>
-               <div class="player-display__labels--ppg">
-                   <h3 class="player-display__label player-display__text">PPG</h3>
-               </div>
-               <div class="player-display__labels--apg">
-                   <h3 class="player-display__label player-display__text">APG</h3>
-               </div>
-               <div class="player-display__labels--drpg">
-                   <h3 class="player-display__label player-display__text">DRPG</h3>
-               </div>
-               <div class="player-display__labels--orpg">
-                   <h3 class="player-display__label player-display__text">ORPG</h3>
-               </div>
-               <div class="player-display__labels--bpg">
-                   <h3 class="player-display__label player-display__text">BPG</h3>
-               </div>
-               <div class="player-display__labels--spg">
-                   <h3 class="player-display__label player-display__text">SPG</h3>
-               </div>
+    </div>
+    <div class="Recipe__Items">
+        <div class="Recipe__Items--display">
+            <div class="Recipe__Items--display--pic">
+                <h3 class="Recipe__Items--display--text">Picture</h3>
             </div>
-            <div class="player-display__actual-stats">
-                
+            <div class="Recipe__Items--display--recipe">
+                <h3 class="Recipe__Items--display--text">Recipe</h3>
             </div>
         </div>
-    </section>
+        <div>
+        </div>
+    </div>
 </body>
-<script src="index.js"></script>
+<script src="./index.js"></script>
 </html>
